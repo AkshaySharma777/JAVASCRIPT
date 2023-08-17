@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+  </head>
+  <body>
+    <center>
+        <h1>
+        Comparison (Relational) Operators
+        </h1>
+    </center>
+    <hr>
+
+    <script>
+      let firstNumber = 50,
+        secondNumber = 50;
+        thirdNumber = 19;
+        stringNumber = "50";
+
+        document.writeln(`<h2>FirstNumber = ${firstNumber}, SecondNumber = ${secondNumber}, ThirdNumber = ${thirdNumber}, stringNumber = ${stringNumber}</h2>`);
+
+        if(firstNumber==secondNumber){
+            document.writeln(`<p>${firstNumber} is Equal to ${secondNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Not Equal to ${secondNumber}</p>`);
+        }
+
+
+        if(firstNumber!=thirdNumber){ 
+            document.writeln(`<p>${firstNumber} is Not Equal to ${thirdNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Equal to ${thirdNumber}</p>`);
+        }
+
+
+        if(firstNumber!==stringNumber){
+            document.writeln(`<p>${firstNumber} is Not Identical to StringNumber ${stringNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Identical to StringNumber ${stringNumber}</p>`);
+        }
+
+
+        if(firstNumber>thirdNumber){
+            document.writeln(`<p>${firstNumber} is Greater than to ${thirdNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Not Greater than to ${thirdNumber}</p>`);
+        }
+        if(firstNumber>=secondNumber){
+            document.writeln(`<p>${firstNumber} is Greater than or Equal to ${secondNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Not Greater than ${secondNumber}</p>`);
+        }
+        
+
+        if(thirdNumber<secondNumber){
+            document.writeln(`<p>${thirdNumber} is Lesser than ${secondNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${thirdNumber} is Not Lesser than ${secondNumber}</p>`);
+        }
+        
+
+        if(firstNumber<=secondNumber){
+            document.writeln(`<p>${firstNumber} is Lesser than or Equal to ${secondNumber}</p>`);
+        }
+        else{
+            document.writeln(`<p>${firstNumber} is Not Lesser than ${secondNumber}</p>`);
+        }
+    </script>
+  </body>
+</html>

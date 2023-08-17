@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Largest of 3 numbers
+        </h1>
+       </center>
+       <hr>
+    <script>
+        var firstNumber = prompt("Enter 1st Number"), secondNumber = prompt("Enter 2nd Number"), thirdNumber = prompt("Enter 3rd Number");
+        document.writeln("FirstNumber = ",firstNumber, " SecondNumber =", secondNumber, " and ThirdNumber = ", thirdNumber);
+        document.write(`<br><br>`);
+        if(firstNumber>secondNumber && firstNumber>thirdNumber){
+            document.writeln("FirstNumber ",firstNumber, "is the largest");
+        }
+        else if(secondNumber>firstNumber && secondNumber>thirdNumber){
+            document.writeln("SecondNumber ",secondNumber, " is the largest");
+        }
+        else{
+            document.writeln("ThirdNumber = ", thirdNumber, " is the largest");
+        }
+    </script>
+</body>
+</html>
+
+
