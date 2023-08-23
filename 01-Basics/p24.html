@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+  </head>
+  <body>
+    <center>
+      <h1>Function</h1>
+      <p>A function is a block of code which only runs when it is called.</p>
+    </center>
+    <hr />
+    <h2>There are 4 types of functions</h2>
+    <pre>
+    1. Default Function (No Parameter, No Return Value)
+    2. Without Parameter, with Return Value
+    3. With Parameter, Without Return Value
+    4. With Parameter, With Return Value
+</pre>
+    <hr/>
+    <script>
+      function addFunction() {
+        let firstNumber = 10,
+          secondNumber = 20,
+          sum = firstNumber + secondNumber;
+        return sum;
+        document.write(`<p><b>SUM = ${sum}</b></p>`);
+      }
+      document.write(
+        `<strong>Without Parameter, with Return Value : ${addFunction()}</strong>`
+      );
+    </script>
+  </body>
+</html>

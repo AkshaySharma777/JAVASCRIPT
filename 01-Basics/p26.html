@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+  </head>
+  <body>
+<center>
+  <h1>
+     With Parameter, With Return Value
+  </h1>
+</center>
+    <hr/>
+    <script>
+      function studentsDetails(firstName, lastName, marks) {
+        document.write(`<p>First Parameter Value is : ${firstName}</p>`);
+        document.write(`<p>Last Parameter Value is : ${lastName}</p>`);
+
+        let fn = firstName, ln = lastName, fullName = fn + ' ' + ln;
+        
+       
+        return fullName;
+       // document.write(`<p>Full Name Variable Value is : ${fullName}</p>`);
+      
+}
+     document.write(studentsDetails("Akshay", 777));
+      
+    </script>
+  </body>
+</html>
+ 
