@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+  </head>
+  <body>
+    <h1>Rem of 2 numbers</h1>
+
+    <button onclick= "submitHandler()"">
+       Click to Caluclate
+    </button>
+    <div id="result"></div>
+    <script>
+      function submitHandler() {
+        let x = Number(window.prompt("Enter first Number")),
+          y = Number(prompt("Enter second Number"));
+        console.log("x = ", x, "-", "y = ", y);
+        let res = x % y;
+        document.getElementById("result").innerHTML =
+          "<h3> Rem of x % y = " + res + "</h3>";
+      }
+    </script>
+  </body>
+</html>

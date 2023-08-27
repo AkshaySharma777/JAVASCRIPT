@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+      div,
+      input {
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select {
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      
+    }
+    form{
+      background: url(assets/images/armstrong.jpeg) no-repeat;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>11) To check if a number is Armstrong or not</h1>
+    </center>
+    <hr />
+    <form onsubmit="armstrongNumber(event)">
+      <label for="number">Enter a number</label>
+      <br />
+      <input type="number" id="armNum" />
+      <br /><br />
+      <label for="result">Result</label>
+      <div id="result"></div>
+      <br />
+      <button type="submit">Check</button>
+    </form>
+    <script>
+      function armstrongNumber(event) {
+        event.preventDefault();
+        var armstrong = document.getElementById("armNum").value, sum = 0;
+         var count = armstrong.length;
+        var temp = armstrong;
+        while (temp>0){
+          let rem = temp % 10;
+           sum += Math.pow(rem, count);
+          temp = parseInt(temp/10);
+        }
+        if (sum==armstrong) {
+          document.getElementById("result").innerHTML = "It is an armstrong number";
+        } 
+        else {
+          document.getElementById("result").innerHTML = "It is not an armstrong number";
+        }
+      }
+    </script>
+  </body>
+</html>

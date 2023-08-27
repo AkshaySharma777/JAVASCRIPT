@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+    <style>
+      div,input{
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select{
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            8) To check if the triangle is equilateral or isosceles or scalene
+        </h1>
+    </center>
+    <hr>
+    <form onsubmit="triangle(event)">
+        <label for="number">Enter value of side a</label>
+        <br>
+          <input type="number" id="number1">
+          <br><br>
+          <label for="number">Enter value of side b</label>
+        <br>
+          <input type="number" id="number2">
+          <br><br>
+          <label for="number">Enter value of side c</label>
+        <br>
+          <input type="number" id="number3">
+          <br><br>
+          <label for="result">Result</label>
+          <div id="result">
+          </div>
+          <br>
+           <button type="submit">
+            Output
+           </button>
+    </form>
+    <script>
+        
+     function triangle(event){
+        event.preventDefault();
+        var a = Number(document.getElementById("number1").value), b = Number(document.getElementById("number2").value), c = Number(document.getElementById("number3").value);
+             if(a===b && b===c){
+                   document.getElementById('result').innerHTML= `EQUILATERAL TRIANGLE`;
+             }
+             else if(a!=b && b!=c && c!=a){
+                document.getElementById('result').innerHTML= `SCALENE TRIANGLE`;
+             }
+             else if(a===b || b===c || c===a){
+                document.getElementById('result').innerHTML= `ISOSCELES TRIANGLE`;
+             }
+             else{
+                document.getElementById('result').innerHTML= `Inputs are invalid.`;
+             }
+     }
+    </script>
+</body>
+</html>

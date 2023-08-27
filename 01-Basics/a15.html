@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+    <style>
+      div,input{
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            4) To check if a number is palindrome or not
+        </h1>
+    </center>
+    <hr>
+    <form onsubmit="palindrome(event)">
+        <label for="number">Enter number</label>
+        <br>
+          <input type="number" id="number">
+          <br><br>
+          <label for="result">Result</label>
+          <div id="result">
+          </div>
+          <br>
+           <button type="submit">
+            Check Palindromic Number!
+           </button>
+    </form>
+    <script>
+     function palindrome(event){
+        event.preventDefault();
+        var num = Number (document.getElementById('number').value);
+        var rev=0, rem=0;
+        const temp=num;
+        while(num>0){
+            
+            // if(num<10){
+            //     rev=rev*10+num;
+            //     num=0;
+            //     break;
+            // }
+            // else{
+                rem=num%10;
+                rev=rev*10+rem;
+            num=Math.floor(num/10);
+            
+           
+           // }
+        }
+        if(temp==rev){
+           document.getElementById("result").innerHTML = " Number is Palindrome";
+        }
+        else{
+            document.getElementById("result").innerHTML = " Number is Not Palindrome";
+        }
+     }
+    </script>
+</body>
+</html>

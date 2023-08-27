@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+      div,
+      input {
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select {
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>10) To check if an alphabet is vowel or consonant</h1>
+    </center>
+    <hr />
+    <form onsubmit="vowelsAndConsonants(event)">
+      <label for="number">Enter an alphabet</label>
+      <br />
+      <input type="text" id="alphabet" />
+      <br /><br />
+      <label for="result">Result</label>
+      <div id="result"></div>
+      <br />
+      <button type="submit">Check</button>
+    </form>
+    <script>
+      function vowelsAndConsonants(event) {
+        event.preventDefault();
+        var alpha1 = Number(document.getElementById("alphabet").value);
+        var alpha2 = document.getElementById("alphabet").value.toLowerCase();
+        if(alpha1!=alpha2){
+        if(alpha2.length==1){
+            if(alpha2=='a'||alpha2=='e'||alpha2=='i'||alpha2=='o'||alpha2=='u'){
+                result.innerHTML=`${alpha2} is a VOWEL`;
+            }
+        else{
+            result.innerHTML=`${alpha2} is a CONSONANT`
+        }
+    }}
+    else{
+        document.getElementById("result").innerHTML = "Input value is not an alphabet";
+    }
+      
+    }
+    </script>
+  </body>
+</html>

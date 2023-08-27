@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+    <style>
+      div,input{
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select{
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            7) To check if a number is odd or even
+        </h1>
+    </center>
+    <hr>
+    <form onsubmit="oddOrEven(event)">
+        <label for="number">Enter a number</label>
+        <br>
+          <input type="number" id="number">
+          <br><br>
+          <label for="results">Result</label>
+          <div id="result">
+          </div>
+          <br>
+           <button type="submit">
+            Check
+           </button>
+    </form>
+    <script>
+        
+     function oddOrEven(event){
+        event.preventDefault();
+        var digit = Number(document.getElementById("number").value);
+             if(digit%2===0){
+                   document.getElementById('result').innerHTML= `${digit} is even number.`;
+             }
+             else if(digit%2===1){
+                document.getElementById('result').innerHTML= `${digit} is odd number.`;
+             }
+             else{
+                document.getElementById('result').innerHTML= `Input ${digit} is invalid.`;
+             }
+     }
+    </script>
+</body>
+</html>

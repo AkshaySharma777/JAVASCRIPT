@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+      div,
+      input {
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select {
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>9) To check if a character is an alphabet or not</h1>
+    </center>
+    <hr />
+    <form onsubmit="Char(event)">
+      <label for="number">Enter a character</label>
+      <br />
+      <input type="text" id="singleCharacter" />
+      <br /><br />
+      <label for="result">Result</label>
+      <div id="result"></div>
+      <br />
+      <button type="submit">Output</button>
+    </form>
+    <script>
+      function Char(event) {
+        event.preventDefault();
+        //String.charCodeAt(x)
+        //if(b>='a' & b<='z')
+        var a = Number(document.getElementById("singleCharacter").value);
+        var b = document.getElementById("singleCharacter").value;
+        if(b.length==1){
+        if (a==b) {
+            document.getElementById("result").innerHTML = "It is not an alphabet";
+        } else {
+            document.getElementById("result").innerHTML = "It is an alphabet";
+        }
+       } 
+       else{
+        document.getElementById("result").innerHTML = "Pls input a single character";
+       }0
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+    <style>
+      div,input{
+        border: 2px solid purple;
+        height: 30px;
+        width: 200px;
+      }
+      select{
+        height: 36px;
+        width: auto;
+        font-weight: bold;
+        font-size: larger;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            5) To convert temperature from fahrenheit to celsius and celsius to fahrenheit
+        </h1>
+    </center>
+    <hr>
+    <form onsubmit="temperatureConversion(event)">
+        <label for="number">Enter Temperature</label>
+        <br>
+          <input type="number" id="number">
+          <select name="optionValue" id="optionValue">
+            <option value="0">fahrenheit</option>
+            <option value="1">Celsius</option>
+          </select>
+          <br><br>
+          <label for="results">Result</label>
+          <div id="result">
+          </div>
+          <br>
+           <button type="submit">
+            Convert
+           </button>
+    </form>
+    <script>
+        
+     function temperatureConversion(event){
+        event.preventDefault();
+        var temperature = Number(document.getElementById("number").value);
+        var choice = Number(document.getElementById("optionValue").value);
+        var answer ;
+             if(choice==0){
+                   answer = 5/9*(temperature-32);
+                   document.getElementById('result').innerHTML=`${answer} °C`;
+             }
+             else if(choice==1){
+                answer = (9/5*temperature)+32;
+                document.getElementById('result').innerHTML=`${answer} °F`;
+             }
+     }
+    </script>
+</body>
+</html>
