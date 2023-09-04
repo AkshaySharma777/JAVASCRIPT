@@ -1,0 +1,40 @@
+/* @media (max-width: 768px) {
+    .main{
+        background-size: 100%;
+    }
+  .container {
+    width: 100%;
+    overflow: visible;
+  }
+  h1,
+  input {
+    width: 100%;
+    margin-right: 5px;
+  }
+  tr{
+    width: 95%;
+  }
+} */
+
+@media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+    input {
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: medium;
+    }
+    #dot {
+      width: 60px;
+    }
+    #zero,
+    #clear {
+      width: 100px;
+    }
+  }
+
+@media (min-width: 769px) and (max-width: 1200px) {
+}

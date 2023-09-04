@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-VALIDATION</title>
+    <style>
+        strong{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            USERNAME VALIDATION
+        </h1>
+    </center>
+    <hr>
+    <form onsubmit="validation(event)">
+        <label for="userName">
+            Enter Username : 
+        </label>
+        <input type="text" placeholder="User Name"  name="userName" id="userName" >
+        <!-- minlength="0" maxlength="15" -->
+        <br><br>
+        <strong id="result"></strong>
+        <br><br>
+        <button type="submit">SUBMIT USERNAME</button>
+    </form>
+    <script>
+        function validation(event){
+           event.preventDefault();
+          let len = document.getElementById("userName").value; 
+          if (len.length==0) {
+            document.getElementById("result").style.color="red";
+            document.getElementById("result").innerHTML = "Please Enter Username";
+          } else if(len.length<5){
+            document.getElementById("result").style.color="red";
+            document.getElementById("result").innerHTML = "Please Enter Minimum of 5 Characters";
+          } else if(len.length>15){
+            document.getElementById("result").style.color="red";
+            document.getElementById("result").innerHTML = "Please Enter Maximum of 15 Characters";
+          }
+          else{
+            document.getElementById("result").style.color="green";
+            document.getElementById("result").innerHTML = "Entered Username is Valid";
+          }
+        }
+    </script>
+</body>
+</html>

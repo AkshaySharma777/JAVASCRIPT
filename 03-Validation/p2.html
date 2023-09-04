@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-VALIDATION</title>
+    <style>
+      strong {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>EMAIL VALIDATION</h1>
+    </center>
+    <hr />
+    <form autocomplete="off" onsubmit="validation(event)">
+      <label for="userEmail"> Enter Username : </label>
+      <input
+        type="text"
+        placeholder="User Email"
+        name="userEmail"
+        id="userEmail"
+      />
+      <!-- minlength="0" maxlength="15" -->
+      <br /><br />
+      <strong id="result"></strong>
+      <br /><br />
+      <button type="submit">SUBMIT EMAIL</button>
+    </form>
+    <script>
+      function validation(event) {
+        event.preventDefault();
+        let ip = document.getElementById("userEmail").value;
+        var flag = false;
+        var count = 0;
+        if (ip.length == 0) {
+          document.getElementById("result").style.color = "red";
+          document.getElementById("result").innerHTML = "Please Enter Email";
+        } else {
+          for (let i = 0; i < ip.length; i++) {
+            if (ip[i] == "@") {
+              flag = true;
+            }
+            if (ip[i] == " ") {
+               count++;
+              }
+           }
+        }
+          if (flag == true && count == 0) {
+            document.getElementById("result").style.color = "green";
+            document.getElementById("result").innerText = "Valid email";
+          } 
+          else if(flag == true && count > 0) {
+            document.getElementById("result").style.color = "red";
+            document.getElementById("result").innerHTML =
+              "Do not give spaces in between";
+          }
+          else if(flag == false && count > 0) {
+            document.getElementById("result").style.color = "red";
+            document.getElementById("result").innerHTML =
+              "Please include @ in the email";
+          }
+      
+        
+      }
+    </script>
+  </body>
+</html>

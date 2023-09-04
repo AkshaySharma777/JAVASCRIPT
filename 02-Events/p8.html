@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Event</title>
+    <style>
+      h3{
+        background-color: teal;
+      }
+    </style>
+</head>
+<body>
+    <center><h1>Media Events</h1></center>
+    <video controls 
+    src="assets/media/v1.mp4" id="video" height="400" width="600" onplay="ply()"  onpause="pausee()" onvolumechange="vol()" onseeking="seek()"></video>
+    <h3 id="output"> </h3>
+
+  <script>
+    function ply(){
+        document.getElementById("output").innerHTML = "video is playing";
+    }
+    function pausee(){
+      document.getElementById("output").innerHTML = "video is paused";
+    }
+    
+    function vol(){
+      let amount = (video.volume)*100;
+      document.getElementById("output").innerHTML = amount + "volume is changing";
+    }
+    
+    function seek(){
+      document.getElementById("output").innerHTML = "video is seeking";
+    }
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-VALIDATION</title>
+    <style>
+      strong {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>PHONE NUMBER VALIDATION</h1>
+    </center>
+    <hr />
+    <form autocomplete="on" onsubmit="validation(event)">
+      <label for="mobile"> Enter Phone Number : </label>
+      <input type="text" placeholder="User Phone Number" name="mobile" id="mobile" />
+      <!-- minlength="0" maxlength="15" -->
+      <br /><br />
+      <strong id="result"></strong>
+      <br /><br />
+      <button type="submit">SUBMIT EMAIL</button>
+    </form>
+    <script>
+      function validation(event) {
+        event.preventDefault();
+        let ip = document.getElementById("mobile").value;
+        let result = document.getElementById("result");
+        let regex = /^[6-9]\d{9}$/;
+        if (ip.length == 0) {
+          document.getElementById("result").style.color = "red";
+          document.getElementById("result").innerHTML = "Please Enter Phone Number";
+        } else {
+          if (regex.test(ip) === true) {
+            result.style.color = "green";
+            result.innerHTML = "Valid Phone Number";
+          } else {
+            result.style.color = "red";
+            result.innerHTML = "Invalid Phone Number";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

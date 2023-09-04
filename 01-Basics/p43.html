@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+</head>
+<body>
+    <center>
+        <h1>
+            Object array
+        </h1>
+    </center>
+    <hr>
+    <script>
+      let users = [
+        {
+         id:1,
+         name:'Akshay',
+         email:'jsakshay653@gmail.com',
+         age:22
+      },
+      {
+         id:2,
+         name:'Sidharth',
+         email:'sidharthnm@gmail.com',
+         age:22
+      },
+      {
+         id:3,
+         name:'Srikanth',
+         email:'srikanth@gmail.com',
+         age:23
+      }
+    ];
+      document.write(`<p>USERS ARRAY : ${users}</p>`);
+      document.write(`<p>USERS ARRAY[0] : ${users[0]}</p>`);
+      document.write(`<p>USERS ARRAY[1] : ${users[1]}</p>`);
+      document.write(`<p>USERS.ID: ${users.id}</p>`);
+
+      document.write(`<p>USERS[0].ID: ${users[0].id}</p>`);
+      document.write(`<p>USERS[1].NAME: ${users[0].name}</p>`);
+      document.write(`<p>USERS[2].EMAIL: ${users[0].email}</p>`);
+      document.write(`<p>USERS[3].AGE: ${users[0].age}</p>`);
+      document.write(`<hr>`);
+
+      for(let i=0; i<users.length; i++){
+        document.write(`<h3>ID: ${users[i].id}</h3>`);
+         document.write(`<h3>NAME: ${users[i].name}</h3>`);
+        document.write(`<h3>EMAIL: ${users[i].email}</h3>`);
+        document.write(`<h3>AGE: ${users[i].age}</h3>`);
+      }
+      document.write(`<hr>`);
+
+      document.write(`<h3>EXAMPLE 1 FOREACH LOOP</h3>`);
+      users.forEach(element => {
+        document.write(element, "<br>");
+        document.write(element.id, "<br>");
+        document.write(element.name, "<br>");
+        document.write(element.email, "<br>");
+        document.write(element.age, "<br>");
+      });
+      document.write(`<hr>`);
+
+      document.write(`<h3>EXAMPLE 2 FOREACH LOOP</h3>`);
+      users.forEach(function(item) {
+        document.write(item, "<br>");
+        document.write(item.id, "<br>");
+        document.write(item.name, "<br>");
+        document.write(item.email, "<br>");
+        document.write(item.age, "<br>");
+      });
+    </script>
+</body>
