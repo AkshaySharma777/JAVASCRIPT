@@ -28,7 +28,7 @@
       }
       [type="submit"] {
         color: white;
-        background-color: lightskyblue;
+        background-color: rgba(22, 126, 246, 0.85);
         padding: 10px;
         border: none;
       }
@@ -47,11 +47,15 @@
       button {
         margin-bottom: 50px;
       }
+      h3{
+        border: 1px solid greenyellow;
+      }
     </style>
   </head>
   <body>
+    <h3 id="url"></h3>
     <center>
-      <form autocomplete="on" onsubmit="validation(event)">
+      <form  autocomplete="on" onsubmit="validation(event)" >
         <p class="cap">Contact Form</p>
 
         <label for="name">FullName</label>
@@ -73,11 +77,11 @@
         <br /><br />
         <select name="city" id="city">
           <option value="0">Choose city name</option>
-          <option value="1">Bangalore</option>
-          <option value="2">Mumbai</option>
-          <option value="3">Delhi</option>
-          <option value="4">Kolkata</option>
-          <option value="5">Chennai</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Chennai">Chennai</option>
         </select>
         <h4 id="result4"></h4>
 
@@ -97,28 +101,28 @@
           class="language"
           type="checkbox"
           name="kannada"
-          id="kannada"
+          id="language1"
           value="kannada"
         />Kannada
         <input
           class="language"
           type="checkbox"
           name="english"
-          id="english"
+          id="language2"
           value="english"
         />English
         <input
           class="language"
           type="checkbox"
           name="hindi"
-          id="hindi"
+          id="language3"
           value="hindi"
         />Hindi
         <input
           class="language"
           type="checkbox"
           name="tamil"
-          id="tamil"
+          id="language4"
           value="tamil"
         />Tamil
         <br />
@@ -126,30 +130,32 @@
           class="language"
           type="checkbox"
           name="telugu"
-          id="telugu"
+          id="language5"
           value="telugu"
         />Telugu
         <h4 id="result6"></h4>
 
         <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="reset" onclick="resetting()">Reset</button>
       </form>
     </center>
     <script>
       function validation(event) {
         event.preventDefault();
-
+        
+        var url = document.getElementById("url");
         let fullName = document.getElementById("name").value;
         let result1 = document.getElementById("result1");
         let regex1 = /^[a-z]{3,}\s[a-z]|(\s[a-z]?)$/i;
         if (fullName.length == 0) {
           document.getElementById("result1").style.color = "red";
           document.getElementById("result1").innerHTML =
-            "Name field cannot be empty";
+            "Name field cannot be empty 	&#128512";
         } else {
           if (regex1.test(fullName) === true) {
             result1.style.color = "green";
             result1.innerHTML = "Valid FullName";
+            url.innerHTML += `Name = ${fullName}, `;
           } else {
             result1.style.color = "red";
             result1.innerHTML = "Invalid FullName";
@@ -168,6 +174,7 @@
           if (regex2.test(email) === true) {
             result2.style.color = "green";
             result2.innerHTML = "Valid Email";
+            url.innerHTML += `Email = ${email}, `;
           } else {
             result2.style.color = "red";
             result2.innerHTML = "Invalid Email";
@@ -185,6 +192,7 @@
           if (regex3.test(phone) === true) {
             result3.style.color = "green";
             result3.innerHTML = "Valid PhoneNumber";
+            url.innerHTML += `Phone = ${phone}, `;
           } else {
             result3.style.color = "red";
             result3.innerHTML = "Invalid PhoneNumber";
@@ -200,6 +208,7 @@
         } else {
           result4.style.color = "green";
             result4.innerHTML = "Valid CityName";
+            url.innerHTML+=`City= ${city}, `;
         }
 
         let gender1 = document.getElementById("gender1");
@@ -209,6 +218,12 @@
         {
           result5.style.color = "green";
             result5.innerHTML = "Valid Gender";
+            if(gender1.checked){
+              url.innerHTML += `Gender  = ${gender1.value}, `;
+            } else{
+              url.innerHTML += `Gender  = ${gender2.value}, `;
+            }
+         
         }
         else{
           document.getElementById("result5").style.color = "red";
@@ -216,25 +231,32 @@
             "Please select gender";
         }
        
-        let kannada = document.getElementById("kannada");
-        let english = document.getElementById("english");
-        let hindi = document.getElementById("hindi");
-        let tamil = document.getElementById("tamil");
-        let telugu = document.getElementById("telugu");
-
+        let language1 = document.getElementById("language1");
+        let language2 = document.getElementById("language2");
+        let language3 = document.getElementById("language3");
+        let language4 = document.getElementById("language4");
+        let language5 = document.getElementById("language5");
+        let language = [language1, language2, language3, language4, language5];
         let result6 = document.getElementById("result6");
-        if(kannada.checked || english.checked || hindi.checked || tamil.checked || telugu.checked)
+        if(language1.checked || language2.checked || language3.checked || language4.checked || language5.checked)
         {
           result6.style.color = "green";
             result6.innerHTML = "Valid language";
-        }
+            url.innerHTML += "Languages = ";
+             for(let index=0;index<6;index++){
+              if(language[index].checked){
+                url.innerHTML += `${language[index].value}, `;
+             } }}
         else{
           document.getElementById("result6").style.color = "red";
           document.getElementById("result6").innerHTML =
             "Please select language";
         }
-        
-      }
+    
+     }
+     function resetting(){
+      url.innerHTML = "";
+     }
     </script>
   </body>
 </html>

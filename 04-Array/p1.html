@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-ARRAY</title>
+</head>
+<body>
+    <center>
+        <h1>
+            ARRAY
+        </h1>
+        <p>
+            Collection of data
+        </p>
+        <hr>
+        <h1>
+            By Array Literal
+        </h1>
+    </center>
+
+    <hr>
+
+    <script>
+        let fruits = ["Apple", "Mango", "Orange", "Papaya", 1000];
+        document.write(typeof(fruits)+"<br>");
+        document.write(fruits+"<br>");
+
+        document.write("<hr>");
+        document.write("Fruits Length = ",fruits.length+"<br>");
+        document.write("Zero index value = ",fruits[0]+"<br>");
+        document.write("First index value = ",fruits[1] +"<br> <hr>");
+
+  for(let i=0;i<fruits.length;i++){
+
+    document.write(fruits[i]+"<br>");
+  }
+    </script>
+
+    <hr>
+     <center>
+        <h1>
+            By creating instance of Array Object or Constructor directly (using new keyword)
+        </h1>
+    </center>
+    <hr>
+   <script>
+     let empName = new Array();
+     document.write("empName = ",typeof(empName));
+     document.write("<br><br>");
+     empName[0] = "Akshay";
+     empName[1] = "Sidharth";
+     empName[2] = "Srikanth";
+     empName[3] = "Asha";
+     empName[4] = "Pavitra";
+     empName[5] = "Shiva";
+     empName[6] = "Raghavendra";
+
+     for(let i=0;i<empName.length;i++){
+        document.write(empName[i]+"<br>");
+     }
+   </script>
+
+<hr>
+<center>
+   <h1>
+       By using an Array object constructor parameter (using new keyword)
+   </h1>
+</center>
+<hr>
+
+<script>
+let studentInfo = new Array("Tomato", "Potato", "Onion", "Brinjal", "Drumstick");
+
+for(let i=0;i<studentInfo.length;i++){
+    document.write(studentInfo[i]+"<br>");
+}
+</script>
+
+</body>
+</html>
