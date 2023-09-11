@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <center id="test">
+      <h1>DOM (DOCUMENT OBJECT MODEL)</h1>
+    </center>
+    <hr>
+    <script>
+      document.write(document.documentElement.getAttribute("lang"),"<br>");
+      document.write(document.getElementById("test").getAttribute("id"),"<br>");
+
+      document.body.style.background = "red";
+
+      document.write(document.head.lastElementChild.nodeName);
+    </script>
+  </body>
+</html>

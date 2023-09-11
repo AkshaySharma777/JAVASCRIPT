@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+</head>
+
+<body>
+    <center>
+        <h1>DOM</h1>
+    </center>
+    <hr />
+    <ul id="test">
+        <li>Bread</li>
+        <li class="tick">Coffee</li>
+        <li>Pineapple Cake</li>
+    </ul>
+    <ul>
+        <li>Bread</li>
+        <li class="tick">Coffee</li>
+        <li>Pineapple Cake</li>
+    </ul>
+
+    <script>
+       let match1 = document.querySelector("#test");
+       document.write(`<p>querySelector() result : ${match1}</p>`);
+       document.write(`<p><b>match1.length : </b>${match1.length}</p>`);
+
+       let match2 = document.querySelectorAll("li.tick");
+       document.write(`<p>querySelectoAll() result : ${match2}</p>`);
+       document.write("<p><b>match2.length : </b></p>" + match2.length);
+
+       match2[0].style.textDecoration = "line-through";
+       match2[1].style.textDecoration = "underline";
+    </script>
+</body>
+
+</html>

@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS-VALIDATION</title>
     <style>
+      section{
+        background: url(assets/images/flower.jpg) no-repeat center;
+        background-size: cover;
+      }
       form {
-        border: 2px solid black;
         width: 400px;
         height: auto;
         /* padding: 10px; */
+        background-color: rgba(246, 168, 22, 0.25);
       }
       .cap {
-        font-size: x-large;
+        font-size: xx-large;
         font-weight: bold;
         text-decoration: underline;
       }
@@ -20,11 +24,13 @@
         padding: 8px;
         width: 260px;
         height: 25px;
+        background-color: transparent;
       }
       select {
         height: 43px;
         padding: 8px;
         width: 278px;
+        background-color: transparent;
       }
       [type="submit"] {
         color: white;
@@ -47,15 +53,16 @@
       button {
         margin-bottom: 50px;
       }
-      h3{
+      h3 {
         border: 1px solid greenyellow;
       }
     </style>
   </head>
   <body>
+    <section class="container">
     <h3 id="url"></h3>
     <center>
-      <form  autocomplete="on" onsubmit="validation(event)" >
+      <form autocomplete="on" onsubmit="validation(event)">
         <p class="cap">Contact Form</p>
 
         <label for="name">FullName</label>
@@ -87,12 +94,20 @@
 
         <label for="gender">Gender</label>
         <br /><br />
-        <input class="radio" type="radio" name="gender" id="gender1" value="male" /><sup
-          >Male</sup
-        >
-        <input class="radio" type="radio" name="gender" id="gender2" value="female" /><sup
-          >Female</sup
-        >
+        <input
+          class="radio"
+          type="radio"
+          name="gender"
+          id="gender1"
+          value="male"
+        /><sup>Male</sup>
+        <input
+          class="radio"
+          type="radio"
+          name="gender"
+          id="gender2"
+          value="female"
+        /><sup>Female</sup>
         <h4 id="result5"></h4>
 
         <label for="language">Languages (optional)</label>
@@ -139,18 +154,19 @@
         <button type="reset" onclick="resetting()">Reset</button>
       </form>
     </center>
+  </section>
     <script>
       function validation(event) {
         event.preventDefault();
-        
+
         var url = document.getElementById("url");
         let fullName = document.getElementById("name").value;
-        let result1 = document.getElementById("result1");
-        let regex1 = /^[a-z]{3,}\s[a-z]|(\s[a-z]?)$/i;
-        if (fullName.length == 0) {
+        var result1 = document.getElementById("result1");
+        let regex1 = /^[a-z]{1,}\s([a-z]{1,}\s)?[a-z]{1,}$/i;
+         if (fullName.length == 0) {
           document.getElementById("result1").style.color = "red";
           document.getElementById("result1").innerHTML =
-            "Name field cannot be empty 	&#128512";
+            "Name field cannot be empty";
         } else {
           if (regex1.test(fullName) === true) {
             result1.style.color = "green";
@@ -162,9 +178,8 @@
           }
         }
 
-         
         let email = document.getElementById("email").value;
-        let result2 = document.getElementById("result2");
+        var result2 = document.getElementById("result2");
         let regex2 = /^\S+@\S+\.\S+$/;
         if (email.length == 0) {
           document.getElementById("result2").style.color = "red";
@@ -182,7 +197,7 @@
         }
 
         let phone = document.getElementById("phone").value;
-        let result3 = document.getElementById("result3");
+        var result3 = document.getElementById("result3");
         let regex3 = /^[6-9]\d{9}$/;
         if (phone.length == 0) {
           document.getElementById("result3").style.color = "red";
@@ -200,63 +215,70 @@
         }
 
         let city = document.getElementById("city").value;
-        let result4 = document.getElementById("result4");
+        var result4 = document.getElementById("result4");
         if (city == 0) {
           document.getElementById("result4").style.color = "red";
           document.getElementById("result4").innerHTML =
             "Please select city name";
         } else {
           result4.style.color = "green";
-            result4.innerHTML = "Valid CityName";
-            url.innerHTML+=`City= ${city}, `;
+          result4.innerHTML = "Valid CityName";
+          url.innerHTML += `City= ${city}, `;
         }
 
         let gender1 = document.getElementById("gender1");
         let gender2 = document.getElementById("gender2");
-        let result5 = document.getElementById("result5");
-        if(gender1.checked || gender2.checked)
-        {
+        var result5 = document.getElementById("result5");
+        if (gender1.checked || gender2.checked) {
           result5.style.color = "green";
-            result5.innerHTML = "Valid Gender";
-            if(gender1.checked){
-              url.innerHTML += `Gender  = ${gender1.value}, `;
-            } else{
-              url.innerHTML += `Gender  = ${gender2.value}, `;
-            }
-         
-        }
-        else{
+          result5.innerHTML = "Valid Gender";
+          if (gender1.checked) {
+            url.innerHTML += `Gender  = ${gender1.value}, `;
+          } else {
+            url.innerHTML += `Gender  = ${gender2.value}, `;
+          }
+        } else {
           document.getElementById("result5").style.color = "red";
-          document.getElementById("result5").innerHTML =
-            "Please select gender";
+          document.getElementById("result5").innerHTML = "Please select gender";
         }
-       
+
         let language1 = document.getElementById("language1");
         let language2 = document.getElementById("language2");
         let language3 = document.getElementById("language3");
         let language4 = document.getElementById("language4");
         let language5 = document.getElementById("language5");
         let language = [language1, language2, language3, language4, language5];
-        let result6 = document.getElementById("result6");
-        if(language1.checked || language2.checked || language3.checked || language4.checked || language5.checked)
-        {
+        var result6 = document.getElementById("result6");
+        if (
+          language1.checked ||
+          language2.checked ||
+          language3.checked ||
+          language4.checked ||
+          language5.checked
+        ) {
           result6.style.color = "green";
-            result6.innerHTML = "Valid language";
-            url.innerHTML += "Languages = ";
-             for(let index=0;index<6;index++){
-              if(language[index].checked){
-                url.innerHTML += `${language[index].value}, `;
-             } }}
-        else{
+          result6.innerHTML = "Valid language";
+          url.innerHTML += "Languages = ";
+          for (let index = 0; index < 6; index++) {
+            if (language[index].checked) {
+              url.innerHTML += `${language[index].value}, `;
+            }
+          }
+        } else {
           document.getElementById("result6").style.color = "red";
           document.getElementById("result6").innerHTML =
             "Please select language";
         }
-    
-     }
-     function resetting(){
-      url.innerHTML = "";
-     }
+      }
+      function resetting() {
+        url.innerHTML = "";
+        result1.innerHTML = "";
+        result2.innerHTML = "";
+        result3.innerHTML = "";
+        result4.innerHTML = "";
+        result5.innerHTML = "";
+        result6.innerHTML = "";
+      }
     </script>
   </body>
 </html>
