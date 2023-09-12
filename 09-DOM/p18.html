@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <center>
+      <h1>document.cookie</h1>
+    </center>
+    <hr />
+
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="viewCookie()">View Cookie</button>
+    <button onclick="resetCookie()">Reset Cookie</button>
+
+    <h3 id="output"></h3>
+
+    <script>
+      function setCookie() {
+        let id = "Akshay";
+        document.cookie = `USER ID = ${id}; expires = Tue Sep 12 2023 14:25:00 GMT+0530; secure = true`;
+      }
+
+      function viewCookie() {
+        if (document.cookie.length != 0) {
+          document.getElementById("output").innerHTML = document.cookie;
+        } else {
+          alert("Cookie not available");
+        }
+      }
+
+      function resetCookie() {
+        if (document.cookie == "USER ID=Akshay") {
+          document.getElementById("output").innerHTML = "";
+           window.location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>
