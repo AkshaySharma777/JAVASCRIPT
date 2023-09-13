@@ -1,0 +1,51 @@
+section{
+    background: url(assets/images/flower.jpg) no-repeat center;
+    background-size: cover;
+  }
+  form {
+    width: 400px;
+    height: auto;
+    /* padding: 10px; */
+    background-color: rgba(246, 168, 22, 0.25);
+  }
+  .cap {
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  input {
+    padding: 8px;
+    width: 260px;
+    height: 25px;
+    background-color: transparent;
+  }
+  select {
+    height: 43px;
+    padding: 8px;
+    width: 278px;
+    background-color: transparent;
+  }
+  [type="submit"] {
+    color: white;
+    background-color: rgba(22, 126, 246, 0.85);
+    padding: 10px;
+    border: none;
+  }
+  [type="reset"] {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+  }
+  .radio,
+  .language {
+    width: 15px !important;
+    height: 20px;
+    margin-top: 4px;
+  }
+  button {
+    margin-bottom: 50px;
+  }
+  h3 {
+    border: 1px solid greenyellow;
+  }
