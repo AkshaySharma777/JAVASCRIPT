@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact List</title>
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
     <style>
       * {
         padding: 0%;
@@ -29,148 +29,143 @@
         border-radius: 10px;
         transition: 0.5s ease-in-out;
       }
-      
-      .item:hover{
-        transform: scale(1,1);
+
+      .item:hover {
+        transform: scale(1, 1);
       }
-      img{
+      img {
         height: 350px;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
       }
-      .name{
+      .name {
         text-align: center;
         font-size: xx-large;
         font-weight: bold;
         margin: 10px;
       }
-      .email, .mobile{
+      .email,
+      .mobile {
         word-spacing: 150px;
         padding: 15px;
         margin: auto 35px;
         line-height: 1;
         font-size: 17px;
-        
       }
-      .address{
+      .address {
         display: flex;
         margin-left: 50px;
         font-size: 18px;
         font-weight: bold;
       }
-      details>summary::marker{
+      details > summary::marker {
         font-size: 10px;
       }
-      .buttons{
+      .buttons {
         display: flex;
         justify-content: space-between;
         padding: 15px;
       }
-      .fa-pen{
-        background-color: rgb(10, 122, 213) ;
+      .fa-pen {
+        background-color: rgb(10, 122, 213);
         padding: 10px;
         border-radius: 5px;
         color: white;
       }
-      .fa-pen:hover, .fa-trash:hover{
+      .fa-pen:hover,
+      .fa-trash:hover {
         cursor: pointer;
       }
-      .fa-trash{
+      .fa-trash {
         background-color: red;
         padding: 10px;
         border-radius: 5px;
         color: white;
       }
-     
-      h1{
+
+      h1 {
         margin: 30px;
         font-size: 40px;
         font-weight: lighter;
       }
-      span{
+      span {
         color: darkcyan;
         font-size: 18px;
         font-weight: bold;
       }
-      .editbutton{
+      .editbutton {
         background-color: transparent;
         border-color: transparent;
       }
-      .deletebutton{
+      .deletebutton {
         background-color: transparent;
         border-color: transparent;
       }
-      .formHolder, form{
+      .formHolder,
+      form {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
         flex-grow: 2;
       }
-      form{
+      form {
         padding: 30px;
         box-shadow: 7.4px 14.9px 14.9px hsla(0, 44%, 49%, 0.27);
         margin: 30px auto;
       }
-      form>p{
+      form > p {
         font-size: 25px;
       }
-      form>label, form>button{
+      form > label,
+      form > button {
         font-weight: bold;
       }
-      form>button{
+      form > button {
         padding: 10px;
         border-radius: 20px;
         box-shadow: 4px 4px;
       }
-      form>button:active{
+      form > button:active {
         transform: scale(4px 4px);
       }
-      form>button:hover{
+      form > button:hover {
         cursor: pointer;
       }
-      form>[type = "submit"]{
-        background-color:green;
+      form > [type="submit"] {
+        background-color: green;
       }
-      form>[type = "reset"]{
+      form > [type="reset"] {
         background-color: red;
       }
 
-    @media(max-width:768px){
-        .container{
-            flex-flow: column;
-            
+      @media (max-width: 768px) {
+        .container {
+          flex-flow: column;
         }
-        .item{
-            width: 95%;
-           
+        .item {
+          width: 95%;
         }
-        .email, .mobile{
-        
-        word-spacing: 400px;
-       
-        
+        .email,
+        .mobile {
+          word-spacing: 400px;
+        }
       }
-    }
 
-       @media(min-width:769px) and (max-width:1200px){
-        .container{
-            flex-flow: row wrap;
-            justify-content: center;
-            column-gap: 0px;
-
-            
+      @media (min-width: 769px) and (max-width: 1200px) {
+        .container {
+          flex-flow: row wrap;
+          justify-content: center;
+          column-gap: 0px;
         }
-        .item{
-            width: 46.4%;
+        .item {
+          width: 46.4%;
         }
-        .email, .mobile{
-        
-        word-spacing: 250px;
-       
-        
+        .email,
+        .mobile {
+          word-spacing: 250px;
+        }
       }
-       }
     </style>
   </head>
   <body>
@@ -180,20 +175,24 @@
     <section class="container" id="container"></section>
 
     <div class="formHolder">
-
       <form autocomplete="on" onsubmit="validation(event)">
-
         <p class="cap">Contact List Form</p>
-        <br/><br/>
-       
+        <br /><br />
+
         <label for="image">Profile Pic</label>
- 
-        <input type="file" accept="image/*" name="image" id="image" onchange="displayImage()">
 
-        <img id="selectedImage" src="" alt="Selected Image">
+        <input
+          type="file"
+          accept="image/*"
+          name="image"
+          id="image"
+          onchange="displayImage()"
+        />
 
-       <h4 id="result0"></h4>
-       <br /><br /> 
+        <img id="selectedImage" src="" alt="Selected Image" />
+
+        <h4 id="result0"></h4>
+        <br /><br />
 
         <label for="name">Name</label>
         <input type="text" name="name" id="name" />
@@ -209,353 +208,346 @@
         <input type="text" name="phone" id="phone" />
         <h4 id="result3"></h4>
         <br /><br />
-  
+
         <label for="address">Address</label>
-       <textarea name="address" id="address" cols="30" rows="10" placeholder="8th Main MG Road Bangalore 560034"></textarea>
+        <textarea
+          name="address"
+          id="address"
+          cols="30"
+          rows="10"
+          placeholder="8th Main MG Road Bangalore 560034"
+        ></textarea>
         <h4 id="result4"></h4>
         <br /><br />
 
         <button type="submit" id="submit">Submit</button>
-        <br>
+        <br />
         <button type="reset" onclick="resetting()">Reset</button>
-        
-        <input type="hidden" id="alerting">
 
+        <input type="hidden" id="alerting" />
       </form>
     </div>
-<script>
-
-  var details = [
+    <script>
+      var details = [
         {
-          profilePic : "assets/images/pr1.jpg",
-          name : "Daisy",
+          profilePic: "assets/images/pr1.jpg",
+          name: "Daisy",
           email: "daisy@gmail.com",
-          mobile: '9036333683',
+          mobile: "9036333683",
           address: "California",
         },
         {
-          profilePic : "assets/images/pr2.jpg",
-          name : "Vyshnavi",
+          profilePic: "assets/images/pr2.jpg",
+          name: "Vyshnavi",
           email: "vyshnavi@gmail.com",
-          mobile: '9836333643',
+          mobile: "9836333643",
           address: "Andhra Pradesh",
         },
         {
-
-          profilePic : "assets/images/pr3.jpg",
-          name : "Rachel",
+          profilePic: "assets/images/pr3.jpg",
+          name: "Rachel",
           email: "rachel@gmail.com",
-          mobile: '9036773653',
+          mobile: "9036773653",
           address: "Florida",
         },
         {
-          profilePic : "assets/images/pr4.jpg",
-          name : "Ross",
+          profilePic: "assets/images/pr4.jpg",
+          name: "Ross",
           email: "ross@gmail.com",
-          mobile: '6336333653',
+          mobile: "6336333653",
           address: "Texas",
         },
         {
-          profilePic : "assets/images/pr5.jpg",
-          name : "Joey",
+          profilePic: "assets/images/pr5.jpg",
+          name: "Joey",
           email: "joey@gmail.com",
-          mobile: '7936333653',
+          mobile: "7936333653",
           address: "New York",
         },
         {
-          profilePic : "assets/images/pr6.jpg",
-          name : "Chandler",
+          profilePic: "assets/images/pr6.jpg",
+          name: "Chandler",
           email: "chandler@gmail.com",
-          mobile: '8536333653',
+          mobile: "8536333653",
           address: "Illunios",
         },
         {
-          profilePic : "assets/images/pr7.jpg",
-          name : "Emma",
+          profilePic: "assets/images/pr7.jpg",
+          name: "Emma",
           email: "emma@gmail.com",
-          mobile: '9486333653',
+          mobile: "9486333653",
           address: "London",
         },
         {
-          profilePic : "assets/images/pr8.jpg",
-          name : "Mandy",
+          profilePic: "assets/images/pr8.jpg",
+          name: "Mandy",
           email: "mandy@gmail.com",
-          mobile: '9032133653',
+          mobile: "9032133653",
           address: "Texas",
         },
         {
-          profilePic : "assets/images/pr9.jpg",
-          name : "Bill",
+          profilePic: "assets/images/pr9.jpg",
+          name: "Bill",
           email: "bill@gmail.com",
-          mobile: '7636333653',
+          mobile: "7636333653",
           address: "Boston",
         },
         {
-          profilePic : "assets/images/pr10.jpg",
-          name : "Peter",
+          profilePic: "assets/images/pr10.jpg",
+          name: "Peter",
           email: "peter@gmail.com",
-          mobile: '9226333653',
+          mobile: "9226333653",
           address: "Detroit",
         },
       ];
-      
-      
-      function employeeDetails(){
-      var container = document.getElementById("container");
-      var temp = 0;
-      for (let k = temp; k < details.length; k++) {
-        
-  
-        const item = document.createElement("div"); 
-      item.className = "item"; 
 
-      const img = document.createElement("img"); 
-      img.src = details[k].profilePic; 
-      item.appendChild(img); 
-    
-      let info = document.createElement("div");
-      info.className = "information";
-      item.appendChild(info);
+      function employeeDetails() {
+        var container = document.getElementById("container");
+        var temp = 0;
+        for (let k = temp; k < details.length; k++) {
+          const item = document.createElement("div");
+          item.className = "item";
 
-      let part1 = document.createElement("div");
-      part1.className = "name";
-      part1.innerHTML = details[k].name;
+          const img = document.createElement("img");
+          img.src = details[k].profilePic;
+          item.appendChild(img);
 
-      let part2 = document.createElement("div");
-      part2.className = "email";
-      part2.innerHTML = `<b>Email </b>${details[k].email}`;
+          let info = document.createElement("div");
+          info.className = "information";
+          item.appendChild(info);
 
-      let part3 = document.createElement("div");
-      part3.className = "mobile";
-      part3.innerHTML = `<b>Mobile </b>${details[k].mobile}`;
+          let part1 = document.createElement("div");
+          part1.className = "name";
+          part1.innerHTML = details[k].name;
 
-      let part4 = document.createElement("detail");
-      part4.className = "address";
-      part4.innerHTML = "<details><summary>Address</summary><span>" + details[k].address + "</span></details>";
+          let part2 = document.createElement("div");
+          part2.className = "email";
+          part2.innerHTML = `<b>Email </b>${details[k].email}`;
 
-       let part5 = document.createElement("section");
-       part5.className = "buttons"; 
+          let part3 = document.createElement("div");
+          part3.className = "mobile";
+          part3.innerHTML = `<b>Mobile </b>${details[k].mobile}`;
 
-       let editButton = document.createElement("button");
-       editButton.className = 'editbutton';
-       editButton.innerHTML = `<i class="fa-solid fa-pen"></i>`;
-       editButton.setAttribute("onclick", `editUser(${temp})`);
+          let part4 = document.createElement("detail");
+          part4.className = "address";
+          part4.innerHTML =
+            "<details><summary>Address</summary><span>" +
+            details[k].address +
+            "</span></details>";
 
-       let deleteButton = document.createElement("button");
-       deleteButton.className = 'deletebutton';
-       deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
-       deleteButton.setAttribute("onclick", `removeUser(${temp})`);
+          let part5 = document.createElement("section");
+          part5.className = "buttons";
 
-      part5.append(editButton,deleteButton);
-      info.append(part1, part2, part3, part4, part5);
-      container.appendChild(item);
+          let editButton = document.createElement("button");
+          editButton.className = "editbutton";
+          editButton.innerHTML = `<i class="fa-solid fa-pen"></i>`;
+          editButton.setAttribute("onclick", `editUser(${temp})`);
 
-      temp++;
-      };
-     }
-     employeeDetails();
-     resetting();
-  function validation(event) {
-    event.preventDefault();
-    
-    var image = document.getElementById('image');
-    var result0 = document.getElementById("result0");
-    if (image.value == "") {
-      document.getElementById("result0").style.color = "red";
-        document.getElementById("result0").innerHTML = "Pls select an image";
-    }
-    else{
-      document.getElementById("result0").style.color = "green";
-      document.getElementById("result0").innerHTML = "Valid image";
-    }
+          let deleteButton = document.createElement("button");
+          deleteButton.className = "deletebutton";
+          deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+          deleteButton.setAttribute("onclick", `removeUser(${temp})`);
 
+          part5.append(editButton, deleteButton);
+          info.append(part1, part2, part3, part4, part5);
+          container.appendChild(item);
 
-  var name = document.getElementById("name").value;
-      var result1 = document.getElementById("result1");
-      var regex1 = /^[A-Z]{1}\S[a-z]{1,}$/;
-
-      if (name.length == 0) {
-        document.getElementById("result1").style.color = "red";
-        document.getElementById("result1").innerHTML =
-          "Name field cannot be empty";
-      } else {
-        if (regex1.test(name) === true) {
-          result1.style.color = "green";
-          result1.innerHTML = "Valid name";
-          flag1 = true;
-        } else {
-          result1.style.color = "red";
-          result1.innerHTML = "Invalid name";
+          temp++;
         }
       }
+      employeeDetails();
+      resetting();
+      function validation(event) {
+        event.preventDefault();
 
-      var email = document.getElementById("email").value;
-      var result2 = document.getElementById("result2");
-      var regex2 = /^\S+@\S+\.\S+$/;
-      if (email.length == 0) {
-        document.getElementById("result2").style.color = "red";
-        document.getElementById("result2").innerHTML =
-          "Email field cannot be empty";
-      } else {
-        if (regex2.test(email) === true) {
-          result2.style.color = "green";
-          result2.innerHTML = "Valid Email";
+        var image = document.getElementById("image");
+        var result0 = document.getElementById("result0");
+        if (image.value == "") {
+          document.getElementById("result0").style.color = "red";
+          document.getElementById("result0").innerHTML = "Pls select an image";
         } else {
-          result2.style.color = "red";
-          result2.innerHTML = "Invalid Email";
+          document.getElementById("result0").style.color = "green";
+          document.getElementById("result0").innerHTML = "Valid image";
         }
-      }
 
-      var phone = document.getElementById("phone").value;
-      var result3 = document.getElementById("result3");
-      var regex3 = /^[6-9]\d{9}$/;
-      if (phone.length == 0) {
-        document.getElementById("result3").style.color = "red";
-        document.getElementById("result3").innerHTML =
-          "Mobile field cannot be empty";
-      } else {
-        if (regex3.test(phone) === true) {
-          result3.style.color = "green";
-          result3.innerHTML = "Valid PhoneNumber";
+        var name = document.getElementById("name").value;
+        var result1 = document.getElementById("result1");
+        var regex1 = /^[A-Z]{1}\S[a-z]{1,}$/;
+
+        if (name.length == 0) {
+          document.getElementById("result1").style.color = "red";
+          document.getElementById("result1").innerHTML =
+            "Name field cannot be empty";
         } else {
-          result3.style.color = "red";
-          result3.innerHTML = "Invalid PhoneNumber";
+          if (regex1.test(name) === true) {
+            result1.style.color = "green";
+            result1.innerHTML = "Valid name";
+            flag1 = true;
+          } else {
+            result1.style.color = "red";
+            result1.innerHTML = "Invalid name";
+          }
         }
-      }
 
-      var address = document.getElementById("address").value;
-      var result4 = document.getElementById("result4");
-      var regex4 =  /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
-      if (address.length == 0) {
-        document.getElementById("result4").style.color = "red";
-        document.getElementById("result4").innerHTML =
-          "Invalid Address";
-      }
-       else{
-            if (regex4.test(address) === true) {
-             result4.style.color = "green";
+        var email = document.getElementById("email").value;
+        var result2 = document.getElementById("result2");
+        var regex2 = /^\S+@\S+\.\S+$/;
+        if (email.length == 0) {
+          document.getElementById("result2").style.color = "red";
+          document.getElementById("result2").innerHTML =
+            "Email field cannot be empty";
+        } else {
+          if (regex2.test(email) === true) {
+            result2.style.color = "green";
+            result2.innerHTML = "Valid Email";
+          } else {
+            result2.style.color = "red";
+            result2.innerHTML = "Invalid Email";
+          }
+        }
+
+        var phone = document.getElementById("phone").value;
+        var result3 = document.getElementById("result3");
+        var regex3 = /^[6-9]\d{9}$/;
+        if (phone.length == 0) {
+          document.getElementById("result3").style.color = "red";
+          document.getElementById("result3").innerHTML =
+            "Mobile field cannot be empty";
+        } else {
+          if (regex3.test(phone) === true) {
+            result3.style.color = "green";
+            result3.innerHTML = "Valid PhoneNumber";
+          } else {
+            result3.style.color = "red";
+            result3.innerHTML = "Invalid PhoneNumber";
+          }
+        }
+
+        var address = document.getElementById("address").value;
+        var result4 = document.getElementById("result4");
+        var regex4 = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;
+        if (address.length == 0) {
+          document.getElementById("result4").style.color = "red";
+          document.getElementById("result4").innerHTML = "Invalid Address";
+        } else {
+          if (regex4.test(address) === true) {
+            result4.style.color = "green";
             result4.innerHTML = "Valid Address";
-             } else {
+          } else {
             result4.style.color = "red";
             result4.innerHTML = "Invalid Address";
-        }
-       }
-      
-       let res = [result0, result1, result2, result3, result4];
-       let count = 0;
-       for (let i=0 ; i<res.length; i++){
-        if (res[i].style.color == "green") {
-        count++;
-      }
-    }
-     if(count == 5){
-       if (document.getElementById('submit').innerHTML == 'Edit') {
-          document.getElementById("container").innerHTML = " ";
-          let alerting = document.getElementById('alerting');
-           
-          details[alerting.value].profilePic = selectedImage.src;
-           details[alerting.value].name = name;
-           details[alerting.value].email = email;
-           details[alerting.value].mobile = phone;
-           details[alerting.value].address = address;
-           
-           employeeDetails();
-           resetting();
-           alert("User" + alerting.value + " Edited Successfully");
           }
-       else{
-      document.getElementById("container").innerHTML =
-          " ";
-      details.push({
-          profilePic : selectedImage.src,
-          name : name,
-          email: email,
-          mobile: phone,
-          address: address
-        });
-        employeeDetails();
-         resetting();
+        }
+
+        let res = [result0, result1, result2, result3, result4];
+        let count = 0;
+        for (let i = 0; i < res.length; i++) {
+          if (res[i].style.color == "green") {
+            count++;
+          }
+        }
+        if (count == 5) {
+          if (document.getElementById("submit").innerHTML == "Edit") {
+            document.getElementById("container").innerHTML = " ";
+            let alerting = document.getElementById("alerting");
+
+            details[alerting.value].profilePic = selectedImage.src;
+            details[alerting.value].name = name;
+            details[alerting.value].email = email;
+            details[alerting.value].mobile = phone;
+            details[alerting.value].address = address;
+
+            employeeDetails();
+            resetting();
+            alert("User" + alerting.value + " Edited Successfully");
+          } else {
+            document.getElementById("container").innerHTML = " ";
+            details.push({
+              profilePic: selectedImage.src,
+              name: name,
+              email: email,
+              mobile: phone,
+              address: address,
+            });
+            employeeDetails();
+            resetting();
+          }
+        } else {
+          document.getElementById("alert").innerHTML =
+            "Pls enter all details and it should be valid information.";
+        }
       }
-     }
-     else{
-      document.getElementById('alert').innerHTML = "Pls enter all details and it should be valid information.";
-     }
-    }
-   
-    function resetting(){
-      
-      document.getElementById("name").value = " ";
-    document.getElementById("email").value = " ";;
-     document.getElementById("phone").value = " ";;
-    document.getElementById("address").value = " ";;
 
-      let results = [result0, result1, result2, result3, result4];
-      submit.innerHTML = "Submit";
-      document.getElementById("selectedImage").style = "display : none;";
-    
-      for (let p=0 ; p<results.length; p++){
-        results[p].innerHTML = " ";
-    }
-  }
+      function resetting() {
+        document.getElementById("selectedImage").style = "display : none;";
+        document.getElementById("name").value = " ";
+        document.getElementById("email").value = " ";
+        document.getElementById("phone").value = " ";
+        document.getElementById("address").value = " ";
 
+        let results = [result0, result1, result2, result3, result4];
+        submit.innerHTML = "Submit";
 
-  function displayImage() {
-  var imageInput = document.getElementById('image');
-  var selectedImage = document.getElementById('selectedImage');
+        for (let p = 0; p < results.length; p++) {
+          results[p].innerHTML = " ";
+        }
+      }
 
-  if (imageInput.files && imageInput.files[0]) {
-    const reader = new FileReader();
+      function displayImage() {
+        var imageInput = document.getElementById("image");
+        var selectedImage = document.getElementById("selectedImage");
 
-    reader.onload = function (e) {
-      selectedImage.style.display = 'block';
-      selectedImage.src = e.target.result;
-    };
+        if (imageInput.files && imageInput.files[0]) {
+          const reader = new FileReader();
 
-    reader.readAsDataURL(imageInput.files[0]);
-  } else {
-    selectedImage.style.display = 'none';
-    selectedImage.src = '';
-  }
+          reader.onload = function (e) {
+            selectedImage.style.display = "block";
+            selectedImage.src = e.target.result;
+          };
 
-  return selectedImage.src;
-}
+          reader.readAsDataURL(imageInput.files[0]);
+        } else {
+          selectedImage.style.display = "none";
+          selectedImage.src = "";
+        }
 
-function removeUser(temp) {
-    if (confirm('Are you sure to delete this user' + (temp+1) + ' ?')) {
-    document.getElementById("container").innerHTML = " ";
-    details.splice(temp, 1);
-    alert('User ' + (temp+1) + ' Deleted');
-    employeeDetails();
-  }
-}
- 
-function editUser(temp){
-  if (confirm('Are you sure to edit this user' + (temp+1) + ' ?')) {
-    document.getElementById("container").innerHTML = " ";
-    resetting();
-    let selectedImage = document.getElementById("selectedImage");
-    let imageing = document.getElementById("image");
-    let naming = document.getElementById("name");
-    let emailing = document.getElementById("email");
-    let phoneing = document.getElementById("phone");
-    let addressing = document.getElementById("address");
-    
+        return selectedImage.src;
+      }
 
-    naming.value = details[temp].name;
-    emailing.value = details[temp].email;
-    phoneing.value = details[temp].mobile;
-    addressing.value = details[temp].address;
+      function removeUser(temp) {
+        if (confirm("Are you sure to delete this user" + (temp + 1) + " ?")) {
+          document.getElementById("container").innerHTML = " ";
+          details.splice(temp, 1);
+          alert("User " + (temp + 1) + " Deleted");
+          employeeDetails();
+        }
+      }
 
-        
-   submit.innerHTML = "Edit";
-   let alerting = document.getElementById('alerting');
-      alerting.setAttribute('value', temp);
-    employeeDetails();
-  }
- }
+      function editUser(temp) {
+        if (confirm("Are you sure to edit this user" + (temp + 1) + " ?")) {
+          document.getElementById("container").innerHTML = " ";
+          resetting();
+          let selectedImage = document.getElementById("selectedImage");
+          let imageing = document.getElementById("image");
+          let naming = document.getElementById("name");
+          let emailing = document.getElementById("email");
+          let phoneing = document.getElementById("phone");
+          let addressing = document.getElementById("address");
 
-</script>
+          selectedImage.style.display = "block";
+          selectedImage.src = details[temp].profilePic;
+          naming.value = details[temp].name;
+          emailing.value = details[temp].email;
+          phoneing.value = details[temp].mobile;
+          addressing.value = details[temp].address;
 
+          submit.innerHTML = "Edit";
+          let alerting = document.getElementById("alerting");
+          alerting.setAttribute("value", temp);
+          employeeDetails();
+        }
+      }
+    </script>
 
     <script src="assets/fontawesome/js/all.js"></script>
   </body>
