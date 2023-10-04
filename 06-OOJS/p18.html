@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>Entries to Object</h1>
+    </center>
+    <hr/>
+
+    <script>
+        const userEntry = [['name' , 'Jhony'], ['email', 'jhony@gmail.com'], ['age', 33]];
+
+        console.log(`userEntry = ${userEntry}`);
+        
+        const userObject = Object.fromEntries(userEntry);
+        console.log(`userObject = ${userObject}`);
+
+    </script>
+</body>
+
+</html>

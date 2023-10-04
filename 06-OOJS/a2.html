@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DROPDOWN</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        .container{
+            background: url(assets/images/bgImg.jpg) no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            opacity: 0.8;
+            color: crimson;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .item{
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            border-radius: 20px;
+            margin: 40px auto;
+        }
+        .item>label, .item>select{
+            font-size: 30px;
+            padding: 10px;
+        }
+        .item>select{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        h1{
+            padding: 20px;
+            width: fit-content;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-size: xx-large;
+            border-radius: 30px;
+        }
+    </style>
+  </head>
+  <body>
+  <section class="container">
+  
+   <div class="item">
+    <h1>Countries and its states</h1>
+   </div>
+   <div class="item">
+    <label for="country">Choose a country :</label>
+    <select name="country" id="country"></select>
+   </div>  
+   <div class="item">
+    <label for="state">States</label>
+    <select name="state" id="state"></select>
+   </div>
+ </section>    
+    <script>
+        var data = [
+            {
+                countries : "INDIA",
+                states : ["KARNATAKA", "ANDHRA PRADESH", "TAMIL NADU", "KERALA", "MAHARASHTRA"]
+            },
+            {
+                countries : "USA",
+                states : ["FLORIDA", "CALIFORNIA", "IOWA", "MICHIGAN", "ALASKA"]
+            },
+            {
+                countries : "AUSTRALIA",
+                states : ["VICTORIA", "QUEENSLAND", "NEW SOUTH WALES", "SOUTH AUSTRALIA", "WESTERN AUSTRALIA"]
+            },
+            {
+                countries : "CANADA",
+                states : ["QUEBEC", "ONTARIO", "NEW BRUNSWICK", "MANITOBA", "BRITISH COLOMBIA"]
+            },
+            {
+                countries : "GERMANY",
+                states : ["BAVARIA", "HESSEN", "SAXONY", "THURINGIA", "LOWERSAXONY"]
+            },
+            {
+                countries : "CHINA",
+                states : ["ZHEJIANG", "HAINAN", "SICHUAN", "FUJIAN", "YUNNAN"]
+            },
+            {
+                countries : "BRAZIL",
+                states : ["MATO GROSSO", "GOIAS", "PARANA", "CEARA", "MINAS GERAIS"]
+            },
+            {
+                countries : "JAPAN",
+                states : ["HOKKAIDO", "CHUBU", "HYOGO", "ISHIKAWA", "EHIME"]
+            },
+            {
+                countries : "SOUTH KOREA",
+                states : ["GANGWON", "GYEONGSANG", "SOUTH CHUNGCHEONGONG", "NORTH GYEONGSANG", "JEJU"]
+            },
+            {
+                countries : "MEXICO",
+                states : ["JALISCO", "YUCATAN", "GUERRERO", "BAJA CALIFORNIA", "NUEVO LEON"]
+            },
+        ];
+         
+        var country = document.getElementById("country");
+        var state = document.getElementById('state');
+        country.innerHTML = `<option value = " ">Select country from the list</option>`;
+        for(let x=0;x<data.length;x++){
+            country.innerHTML += `<option value = ${x}>${data[x].countries}</option>`;
+        }
+        country.addEventListener('change', ()=>{
+            var valCountry = country.value;
+                state.innerHTML = " ";
+                for (let i = 0; i < data[valCountry].states.length; i++) {
+                state.innerHTML += `<option>${data[valCountry].states[i]}</option>`;
+            }
+        });
+    </script>
+  </body>
+</html>

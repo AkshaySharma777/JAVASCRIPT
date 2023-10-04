@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>PROTOTYPE</h1>
+    </center>
+    <hr/>
+
+    <script>
+      function User(){
+        this.name = "ABCD"; 
+        this.getName = function(){
+            return `My Name is ${this.name}`;  
+        };
+      }
+      
+      let x = new User();
+      console.log(`User instance = `, x);
+
+      User.prototype.email = "manu@gmail.com";
+      User.prototype.getEmail = () => {
+        document.write("email = " + x.email + "<br><br>");
+      };
+
+      document.write("name = " + x.name + "<br><br>");
+      document.write("email = " + x.email + "<br><br>");
+
+      x.getName();
+      x.getEmail();
+
+    </script>
+</body>
+  
+</html>

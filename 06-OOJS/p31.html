@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>Class ES-6</h1>
+        <h4>Find Even or Odd using Class</h4>
+    </center>
+    <hr>
+    
+    <input type="number" name="num" id="num">
+    <button type="button" onclick="checkOddOrEven()">Submit</button>
+      <h3 id="result"></h3>
+    <script>
+        
+       class oddOrEven{
+        constructor(x){
+            this.result = document.getElementBy.Id("result");
+            if (x.length<0) {
+                if (x % 2 == 0) {
+                result.innerHTML = x + " is even";
+            } else {
+                result.innerHTML = x + " is odd";
+            }
+         }
+         else {
+            result.innerHTML = "Enter a number greater than 0";
+         }
+        }
+       }
+       function checkOddOrEven(){
+        let num = Number(document.getElementById('num').value);
+        let b = new oddOrEven(num);
+       }
+       
+    </script>
+</body>
+
+</html>

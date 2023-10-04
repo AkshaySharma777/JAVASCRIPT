@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>Obect Assign</h1>
+    </center>
+    <hr>
+
+    <script>
+      var user1 = {
+           name : "Rohan",
+           email : "rohan@gmail.com"
+      };
+      console.log("user1 = ",user1);
+      var user2 = {
+        age : "24",
+        email : "rohan123@gmail.com"
+      };
+      console.log("user2 = ",user2);
+      var res = Object.assign(user1, user2);
+      console.log("res ",res);
+    </script>
+</body>
+
+</html>

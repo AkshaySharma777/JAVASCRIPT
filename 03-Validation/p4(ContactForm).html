@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS-VALIDATION</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
-  </head>
-  <body>
-    <section class="container">
-    <h3 id="url"></h3>
-    <center>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS-VALIDATION</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/media.css" />
+</head>
+
+<body>
+  <section class="container">
+    <div class="formHolder">
+      <center>
       <form autocomplete="on" onsubmit="validation(event)">
         <p class="cap">Contact Form</p>
 
@@ -43,191 +45,197 @@
 
         <label for="gender">Gender</label>
         <br /><br />
-        <input
-          class="radio"
-          type="radio"
-          name="gender"
-          id="gender1"
-          value="male"
-        /><sup>Male</sup>
-        <input
-          class="radio"
-          type="radio"
-          name="gender"
-          id="gender2"
-          value="female"
-        /><sup>Female</sup>
+        <input class="radio" type="radio" name="gender" id="gender1" value="male" /><sup>Male</sup>
+        <input class="radio" type="radio" name="gender" id="gender2" value="female" /><sup>Female</sup>
         <h4 id="result5"></h4>
 
         <label for="language">Languages (optional)</label>
         <br /><br />
-        <input
-          class="language"
-          type="checkbox"
-          name="kannada"
-          id="language1"
-          value="kannada"
-        />Kannada
-        <input
-          class="language"
-          type="checkbox"
-          name="english"
-          id="language2"
-          value="english"
-        />English
-        <input
-          class="language"
-          type="checkbox"
-          name="hindi"
-          id="language3"
-          value="hindi"
-        />Hindi
-        <input
-          class="language"
-          type="checkbox"
-          name="tamil"
-          id="language4"
-          value="tamil"
-        />Tamil
+        <input class="language" type="checkbox" name="kannada" id="language1" value="kannada" />Kannada
+        <input class="language" type="checkbox" name="english" id="language2" value="english" />English
+        <input class="language" type="checkbox" name="hindi" id="language3" value="hindi" />Hindi
+        <input class="language" type="checkbox" name="tamil" id="language4" value="tamil" />Tamil
         <br />
-        <input
-          class="language"
-          type="checkbox"
-          name="telugu"
-          id="language5"
-          value="telugu"
-        />Telugu
+        <input class="language" type="checkbox" name="telugu" id="language5" value="telugu" />Telugu
         <h4 id="result6"></h4>
 
         <button type="submit">Submit</button>
         <button type="reset" onclick="resetting()">Reset</button>
       </form>
     </center>
+    </div>
+    <div class="tableHolder">
+      <table>
+        <tr>
+          <th>Full Name</th>
+          <th id="display1"></th>
+        </tr>
+        <tr>
+          <th>Email Id</th>
+          <th id="display2"></th>
+        </tr>
+        <tr>
+          <th>Phone Number</th>
+          <th id="display3"></th>
+        </tr>
+        <tr>
+          <th>City</th>
+          <th id="display4"></th>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <th id="display5"></th>
+        </tr>
+        <tr>
+          <th>Languages</th>
+          <th id="display6"></th>
+        </tr>
+      </table>
+    </div>
   </section>
-    <script>
-      function validation(event) {
-        event.preventDefault();
+  <script>
+    function validation(event) {
+      event.preventDefault();
+      var display1 = document.getElementById("display1");
+      var display2 = document.getElementById("display2");
+      var display3 = document.getElementById("display3");
+      var display4 = document.getElementById("display4");
+      var display5 = document.getElementById("display5");
+      var display6 = document.getElementById("display6");
+      
+      var flag1 = false;
+      var flag2 = false;
+      var flag3 = false;
+      var flag4 = false;
+      var flag5 = false;
+      var flag6 = false;
 
-        var url = document.getElementById("url");
-        let fullName = document.getElementById("name").value;
-        var result1 = document.getElementById("result1");
-        let regex1 = /^[a-z]{1,}\s([a-z]{1,}\s)?[a-z]{1,}$/i;
-         if (fullName.length == 0) {
-          document.getElementById("result1").style.color = "red";
-          document.getElementById("result1").innerHTML =
-            "Name field cannot be empty";
-        } else {
-          if (regex1.test(fullName) === true) {
-            result1.style.color = "green";
-            result1.innerHTML = "Valid FullName";
-            url.innerHTML += `Name = ${fullName}, `;
-          } else {
-            result1.style.color = "red";
-            result1.innerHTML = "Invalid FullName";
-          }
-        }
+      var flag = [flag1, flag2, flag3, flag4, flag5, flag6];
 
-        let email = document.getElementById("email").value;
-        var result2 = document.getElementById("result2");
-        let regex2 = /^\S+@\S+\.\S+$/;
-        if (email.length == 0) {
-          document.getElementById("result2").style.color = "red";
-          document.getElementById("result2").innerHTML =
-            "Email field cannot be empty";
-        } else {
-          if (regex2.test(email) === true) {
-            result2.style.color = "green";
-            result2.innerHTML = "Valid Email";
-            url.innerHTML += `Email = ${email}, `;
-          } else {
-            result2.style.color = "red";
-            result2.innerHTML = "Invalid Email";
-          }
-        }
+      var fullName = document.getElementById("name").value;
+      var result1 = document.getElementById("result1");
+      var regex1 = /^(?=.*\b[a-z]{3,}\b)(?=.*\b[a-z]{3,}\b|\b[a-z]{3,}\s[a-z]{3,}\b).*$/i;
 
-        let phone = document.getElementById("phone").value;
-        var result3 = document.getElementById("result3");
-        let regex3 = /^[6-9]\d{9}$/;
-        if (phone.length == 0) {
-          document.getElementById("result3").style.color = "red";
-          document.getElementById("result3").innerHTML =
-            "Mobile field cannot be empty";
+      if (fullName.length == 0) {
+        document.getElementById("result1").style.color = "red";
+        document.getElementById("result1").innerHTML =
+          "Name field cannot be empty";
+      } else {
+        if (regex1.test(fullName) === true) {
+          result1.style.color = "green";
+          result1.innerHTML = "Valid FullName";
+          flag1 = true;
+          display1.innerHTML = `${fullName}`;
         } else {
-          if (regex3.test(phone) === true) {
-            result3.style.color = "green";
-            result3.innerHTML = "Valid PhoneNumber";
-            url.innerHTML += `Phone = ${phone}, `;
-          } else {
-            result3.style.color = "red";
-            result3.innerHTML = "Invalid PhoneNumber";
-          }
-        }
-
-        let city = document.getElementById("city").value;
-        var result4 = document.getElementById("result4");
-        if (city == 0) {
-          document.getElementById("result4").style.color = "red";
-          document.getElementById("result4").innerHTML =
-            "Please select city name";
-        } else {
-          result4.style.color = "green";
-          result4.innerHTML = "Valid CityName";
-          url.innerHTML += `City= ${city}, `;
-        }
-
-        let gender1 = document.getElementById("gender1");
-        let gender2 = document.getElementById("gender2");
-        var result5 = document.getElementById("result5");
-        if (gender1.checked || gender2.checked) {
-          result5.style.color = "green";
-          result5.innerHTML = "Valid Gender";
-          if (gender1.checked) {
-            url.innerHTML += `Gender  = ${gender1.value}, `;
-          } else {
-            url.innerHTML += `Gender  = ${gender2.value}, `;
-          }
-        } else {
-          document.getElementById("result5").style.color = "red";
-          document.getElementById("result5").innerHTML = "Please select gender";
-        }
-
-        let language1 = document.getElementById("language1");
-        let language2 = document.getElementById("language2");
-        let language3 = document.getElementById("language3");
-        let language4 = document.getElementById("language4");
-        let language5 = document.getElementById("language5");
-        let language = [language1, language2, language3, language4, language5];
-        var result6 = document.getElementById("result6");
-        if (
-          language1.checked ||
-          language2.checked ||
-          language3.checked ||
-          language4.checked ||
-          language5.checked
-        ) {
-          result6.style.color = "green";
-          result6.innerHTML = "Valid language";
-          url.innerHTML += "Languages = ";
-          for (let index = 0; index < 6; index++) {
-            if (language[index].checked) {
-              url.innerHTML += `${language[index].value}, `;
-            }
-          }
-        } else {
-          document.getElementById("result6").style.color = "red";
-          document.getElementById("result6").innerHTML =
-            "Please select language";
+          result1.style.color = "red";
+          result1.innerHTML = "Invalid FullName";
         }
       }
-      function resetting() {
-        url.innerHTML = "";
-        result1.innerHTML = "";
-        result2.innerHTML = "";
-        result3.innerHTML = "";
-        result4.innerHTML = "";
-        result5.innerHTML = "";
-        result6.innerHTML = "";
+
+      var email = document.getElementById("email").value;
+      var result2 = document.getElementById("result2");
+      var regex2 = /^\S+@\S+\.\S+$/;
+      if (email.length == 0) {
+        document.getElementById("result2").style.color = "red";
+        document.getElementById("result2").innerHTML =
+          "Email field cannot be empty";
+      } else {
+        if (regex2.test(email) === true) {
+          result2.style.color = "green";
+          result2.innerHTML = "Valid Email";
+          flag2 = true;
+          display2.innerHTML = `${email}`;
+        } else {
+          result2.style.color = "red";
+          result2.innerHTML = "Invalid Email";
+        }
       }
-    </script>
-  </body>
+
+      var phone = document.getElementById("phone").value;
+      var result3 = document.getElementById("result3");
+      var regex3 = /^[6-9]\d{9}$/;
+      if (phone.length == 0) {
+        document.getElementById("result3").style.color = "red";
+        document.getElementById("result3").innerHTML =
+          "Mobile field cannot be empty";
+      } else {
+        if (regex3.test(phone) === true) {
+          result3.style.color = "green";
+          result3.innerHTML = "Valid PhoneNumber";
+          flag3 = true;
+          display3.innerHTML = `${phone}`;
+        } else {
+          result3.style.color = "red";
+          result3.innerHTML = "Invalid PhoneNumber";
+        }
+      }
+
+      var city = document.getElementById("city").value;
+      var result4 = document.getElementById("result4");
+      if (city == 0) {
+        document.getElementById("result4").style.color = "red";
+        document.getElementById("result4").innerHTML =
+          "Please select city name";
+      } else {
+        result4.style.color = "green";
+        result4.innerHTML = "Valid CityName";
+        flag4 = true;
+        display4.innerHTML = `${city}`;
+      }
+
+      var gender1 = document.getElementById("gender1");
+      var gender2 = document.getElementById("gender2");
+      var result5 = document.getElementById("result5");
+      if (gender1.checked || gender2.checked) {
+        result5.style.color = "green";
+        result5.innerHTML = "Valid Gender";
+        flag5 = true;
+        if (gender1.checked) {
+          display5.innerHTML = `${gender1.value}`;
+        } else {
+          display5.innerHTML = `${gender2.value}`;
+        }
+      } else {
+        document.getElementById("result5").style.color = "red";
+        document.getElementById("result5").innerHTML = "Please select gender";
+      }
+
+      var language1 = document.getElementById("language1");
+      var language2 = document.getElementById("language2");
+      var language3 = document.getElementById("language3");
+      var language4 = document.getElementById("language4");
+      var language5 = document.getElementById("language5");
+      var language = [language1, language2, language3, language4, language5];
+      var result6 = document.getElementById("result6");
+      if (
+        language1.checked ||
+        language2.checked ||
+        language3.checked ||
+        language4.checked ||
+        language5.checked
+      ) {
+        result6.style.color = "green";
+        result6.innerHTML = "Valid language";
+        flag6 = true;
+        for (var index = 0; index < 6; index++) {
+          if (language[index].checked) {
+            display6.innerHTML += `${language[index].value}, `;
+          }
+        }
+      } else {
+        document.getElementById("result6").style.color = "red";
+        document.getElementById("result6").innerHTML =
+          "Please select language";
+      }
+    }
+
+    function resetting() {
+      var resetArray = [display1,display2,display3,display4,display5,display6,result1,result2,result3,result4,result5,result6];
+      for (let k = 0; k < resetArray.length; k++) {
+        resetArray[k].innerHTML = "";
+      }
+    }
+  </script>
+</body>
+
 </html>

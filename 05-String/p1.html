@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRING</title>
+</head>
+<body>
+    <center>
+        <h1>STRING</h1>
+        <p>Collections of data.</p>
+    </center>
+    <hr>
+
+    <h2>STRING LITERAL</h2>
+    <hr>
+
+    <script>
+        let str1 = 'WELCOME TO STRING';
+        document.write('STR1 : ', str1);
+        document.write('<br> typeof(str1) : ', typeof(str1));
+
+        document.write('<br>str1.length : ', str1.length, '<br>');
+
+        for (let i = 0; i < str1.length; i++) {
+            document.write(str1[i], "<br>");
+        }
+    </script>
+
+    <hr>
+
+    <center>
+        <h1>By creating instance of STRING Object directly (using new keyword)</h1>
+    </center>
+    <hr>
+
+    <script>
+        let str2 = new String();
+        str2[0] = 'A';
+        str2[10] = 'B';
+
+        document.write(`<br>CONSTRUCTOR STRING OBJECT : ${str2[0]}`);
+        document.write(`<br>CONSTRUCTOR STRING OBJECT : ${str2[10]}`);
+
+        str2 = "Creating instance of STRING Object directly (using new keyword)";
+
+        document.write(`<p>CONSTRUCTOR STRING OBJECT : ${str2}</p>`);
+    </script>
+
+<hr>
+
+   <center>
+    <h1>By using STRING object constructor (using new keyword)</h1>
+   </center>
+   <hr>
+
+   <script>
+     let str3 = new String("By using STRING object constructor (using new keyword)");
+
+     document.write(`<p>PARAMETER CONSTRUCTOR STRING OBJECT : ${str3}</p>`);
+   </script>
+</body>
+</html>

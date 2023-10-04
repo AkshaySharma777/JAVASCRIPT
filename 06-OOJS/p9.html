@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>Object Methods = defineProperties(object, { key : { value : abc
+            },
+            key :{ value : xyz
+            }
+            });</h1>
+    </center>
+    <hr>
+
+    <script>
+        let user = {
+            name: 'Ramesh',
+        };
+
+        Object.defineProperties(user, {
+            email: {
+                value: "ramesh@gmail.com"
+            },
+            mobile: {
+                value: "9966887744"
+            },
+            age: {
+                value: "25"
+            }
+        });
+
+        console.log('user = ', user);
+    </script>
+</body>
+
+</html>
