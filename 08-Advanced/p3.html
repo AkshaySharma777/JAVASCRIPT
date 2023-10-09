@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVANCED</title>
+</head>
+<body>
+    <center>
+        <h1>Anonymous Callback Functions or Immediate Invoke/Execution of a Function or Self Triggered Function</h1>
+    </center> 
+    <hr>
+
+    <h2>JAVASCRIPT FUNCTIONS</h2>
+    <p>1) Local Function {function A(){}}</p>
+    <p>2) Expression Function let A = function(){}</p>
+    <p>3) Arrow Function let A () => {}</p>
+    <p>4) CallBack Function forEach(function(item){});</p>
+    <p>5) Closure Function function A(){ function B(){} B();}</p>
+    <p>6) Anonymous Function () ();</p>
+    
+    <script>
+    //  Example 1
+    (function() {alert("Hi Anonymous Function");}) ();
+
+    // Example 2
+    ((a, b)=>{
+      document.write(a);
+      document.write(b);
+    }) (10, 20);
+
+    // Example 3
+    // ((a,b) => {
+    //     return a+b;
+    // }) ();
+    </script>
+</body>
+</html>

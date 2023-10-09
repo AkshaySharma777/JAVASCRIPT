@@ -31,7 +31,7 @@
       }
 
       .item:hover {
-        transform: scale(1, 1);
+        transform: scale(1.1, 1.1);
       }
       img {
         height: 350px;
@@ -133,12 +133,16 @@
         cursor: pointer;
       }
       form > [type="submit"] {
+        margin-top: 10px;
         background-color: green;
       }
       form > [type="reset"] {
+        margin-top: 10px;
         background-color: red;
       }
-
+      #displaying{
+        margin-top: 10px;
+      }
       @media (max-width: 768px) {
         .container {
           flex-flow: column;
@@ -223,8 +227,9 @@
         <button type="submit" id="submit">Submit</button>
         <br />
         <button type="reset" onclick="resetting()">Reset</button>
-
-        <input type="hidden" id="alerting" />
+         
+        <h4 id="displaying"></h4>
+        <input type="hidden" id="alerting"/>
       </form>
     </div>
     <script>
@@ -472,8 +477,9 @@
             employeeDetails();
             resetting();
           }
-        } else {
-          document.getElementById("alert").innerHTML =
+        } 
+        else {
+          document.getElementById("displaying").innerHTML =
             "Pls enter all details and it should be valid information.";
         }
       }
@@ -484,6 +490,7 @@
         document.getElementById("email").value = " ";
         document.getElementById("phone").value = " ";
         document.getElementById("address").value = " ";
+        document.getElementById("displaying").innerHTML = " ";
 
         let results = [result0, result1, result2, result3, result4];
         submit.innerHTML = "Submit";
