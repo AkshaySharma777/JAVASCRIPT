@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <style>
+       section{
+            width: 100%;
+            overflow-x: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 10px;
+        }
+
+        article{
+          background-color: white;
+          padding: 10px;
+          color: darkgreen;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>PROMISES</h1>
+    </center>
+    <hr>
+
+    <section id="photos"></section>
+
+    <script>
+        fetch(`https://jsonplaceholder.typicode.com/photos`)
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+
+            print(result);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+
+        function print(data){
+            console.log('Function Data : ', data);
+
+            data.forEach(item => {
+                let article = document.createElement('article');
+
+                let albumId = document.createElement("h4");
+                let id = document.createElement('h4');
+                let title = document.createElement("h4");
+                let url = document.createElement("h4");
+                let thumbnail = document.createElement("h4");
+                
+
+                albumId.textContent = `albumId : ${item.albumId}`;
+                id.textContent = `id : ${item.id}`;
+                title.textContent = `title : ${item.title}`;
+                url.textContent = `url : ${item.url}`;
+                thumbnail.textContent = `title : ${item.thumbnailUrl}`;
+               
+                
+                article.append(albumId, id, title, url, thumbnail);
+
+                let blk = document.querySelector("#photos");
+
+                blk.appendChild(article);
+
+            });
+        }
+    </script>
+</body>
+</html>
