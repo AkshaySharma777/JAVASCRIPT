@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECMA</title>
+  </head>
+  <body>
+    <center>
+      <h1>Spread(...) operator with Math constructor</h1>
+    </center>
+    <hr />
+
+    <script>
+      var num = [12, 23, 55, 66, 77, 88, 34, 45, 76];
+      console.log('num = ', num);
+      console.log('parameters (Spread) = ', ...num);
+
+      document.write(`<h3>Max = ${Math.max(num)}</h3>`);
+      document.write(`<h3>Max = ${Math.max([12, 23, 55, 66, 77, 88, 34, 45, 76])}</h3>`);
+
+      document.write(`<h3>Max = ${Math.max(...num)}</h3>`);
+      document.write(`<h3>Max = ${Math.max(12, 23, 55, 66, 77, 88, 34, 45, 76)}</h3>`);
+    </script>
+  </body>
+</html>
